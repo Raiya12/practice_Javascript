@@ -19,6 +19,14 @@
         <button onclick="reverseArray()">Reverse</button>
         <p id="reversedArray"></p>
     </div>
+    <!--Filter Positive Numbers-->
+    <div>
+        <h2>Filter Positive Numbers</h2>
+        <p>Enter numbers separated by commas:</p>
+        <input type="text" id="arrayInputPositive" placeholder="e.g. -1,2,-3,4,5">
+        <button onclick="filterPositiveNumbers()">Filter</button>
+        <p id="positiveNumbers"></p>
+    </div>
 
 <!--JS-->
 <script>
@@ -28,6 +36,13 @@
         const array = input.split(",").map(Number); 
         const reversed = array.reverse();
         document.getElementById("reversedArray").innerText = "Reversed Array: " + reversed.join(", ");
+    }
+    //Filter Positive Numbers
+    function filterPositiveNumbers() {
+        const input = document.getElementById("arrayInputPositive").value;
+        const array = input.split(",").map(Number); 
+        const positiveNumbers = array.filter(num => num > 0);
+        document.getElementById("positiveNumbers").innerText = "Positive Numbers: " + positiveNumbers.join(", ");
     }
 
 </script>    
