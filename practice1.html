@@ -5,16 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-   
+    <title>JavaScript Practice</title>
+    <!-- CSS Styles -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+        h2 {
+            color: #4CAF50;
+        }
+        div {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        input[type="number"], input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        p {
+            margin: 10px 0;
+        }
+    </style>
+
     <!-- Even or Odd Checker -->
-<div>
-    <h2>Even or Odd Checker</h2>
-    <p>Enter a number to check if it's even or odd:</p>
-    <input type="number" id="numberInput" placeholder="Enter a number">
-    <button onclick="displayEvenOrOdd()">Check</button>
-    <p id="result"></p>
-</div>
-<!-- Sum of Numbers 1 to N -->
+    <div>
+        <h2>Even or Odd Checker</h2>
+        <p>Enter a number to check if it's even or odd:</p>
+        <input type="number" id="numberInput" placeholder="Enter a number">
+        <button onclick="displayEvenOrOdd()">Check</button>
+        <p id="result"></p>
+    </div>
+
+    <!-- Sum of Numbers 1 to N -->
     <div>
         <h2>Sum of Numbers 1 to N</h2>
         <p>Enter a number that will calculate and return the sum of numbers from 1 to n:</p>
@@ -22,31 +67,34 @@
         <button onclick="displaySum()">Calculate Sum</button>
         <p id="sumResult"></p>
     </div>
-</div>
-<!-- FizzBuzz -->
-<div>
-    <h2>FizzBuzz</h2>
-    <p>Enter a number to get the FizzBuzz sequence:</p>
-    <input type="number" name="fizzBuzzInput" placeholder="Enter a number">
-    <button onclick="displayFizzBuzz()">Get FizzBuzz</button>
-    <p id="fizzBuzzResult"></p>
-</div>
-<!-- Find the Largest Number -->
-<div>
-    <h2>Find the Largest Number</h2>
-    <p>Enter a list of numbers separated by commas:</p>
-    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
-    <button onclick="displayLargestNumber()">Find Largest</button>
-    <p id="largestResult"></p>
- </div>
-<!--Count Vowels in a String-->
- <dev>
-    <h2>Count Vowels in a String</h2>
-    <p>Enter a string to count the number of vowels:</p>
-    <input type="text" id="stringInput" placeholder="Enter a string">
-    <button onclick="displayVowelCount()">Count Vowels</button>
-    <p id="vowelResult"></p>
- </dev>
+
+    <!-- FizzBuzz -->
+    <div>
+        <h2>FizzBuzz</h2>
+        <p>Enter a number to get the FizzBuzz sequence:</p>
+        <input type="number" name="fizzBuzzInput" placeholder="Enter a number">
+        <button onclick="displayFizzBuzz()">Get FizzBuzz</button>
+        <p id="fizzBuzzResult"></p>
+    </div>
+
+    <!-- Find the Largest Number -->
+    <div>
+        <h2>Find the Largest Number</h2>
+        <p>Enter a list of numbers separated by commas:</p>
+        <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+        <button onclick="displayLargestNumber()">Find Largest</button>
+        <p id="largestResult"></p>
+    </div>
+
+    <!-- Count Vowels in a String -->
+    <div>
+        <h2>Count Vowels in a String</h2>
+        <p>Enter a string to count the number of vowels:</p>
+        <input type="text" id="stringInput" placeholder="Enter a string">
+        <button onclick="displayVowelCount()">Count Vowels</button>
+        <p id="vowelResult"></p>
+    </div>
+</body>
 <!-- JavaScript Functions -->
 <script>
     // Even or Odd Checker 
