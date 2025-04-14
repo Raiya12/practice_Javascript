@@ -13,6 +13,16 @@
     <input type="number" id="numberInput" placeholder="Enter a number">
     <button onclick="displayEvenOrOdd()">Check</button>
     <p id="result"></p>
+</div>
+<!-- Sum of Numbers 1 to N -->
+    <div>
+        <h2>Sum of Numbers 1 to N</h2>
+        <p>Enter a number that will calculate and return the sum of numbers from 1 to n:</p>
+        <input type="number" id="sumNumberInput" placeholder="Enter a number">
+        <button onclick="displaySum()">Calculate Sum</button>
+        <p id="sumResult"></p>
+    </div>
+</div>
 
 <!-- JavaScript Functions -->
 <script>
@@ -29,7 +39,19 @@
         const result = checkEvenOrOdd(Number(numberInput));
         document.getElementById('result').textContent = result;
     }
-   
+    // Sum of Numbers 1 to N 
+    function calculateSum(n) {
+        let sum = 0;
+        for (let i = 1; i <= n; i++) {
+            sum += i;
+        }
+        return sum;
+    }
+    function displaySum() {
+        const numberInput = document.getElementById('sumNumberInput').value;
+        const sum = calculateSum(Number(numberInput));
+        document.getElementById('sumResult').textContent = "The sum of numbers from 1 to " + numberInput + " is " + sum + ".";
+    }
 
 </script>
 </body>
