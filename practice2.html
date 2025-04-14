@@ -27,6 +27,14 @@
         <button onclick="filterPositiveNumbers()">Filter</button>
         <p id="positiveNumbers"></p>
     </div>
+    <!--Sum of total Array Elements-->
+    <div>
+        <h2>Sum of Array Elements</h2>
+        <p>Enter numbers separated by commas:</p>
+        <input type="text" id="arrayInputSum" placeholder="e.g. 1,2,3,4,5">
+        <button onclick="sumArrayElements()">Sum</button>
+        <p id="sumResult"></p>
+    </div>
 
 <!--JS-->
 <script>
@@ -44,6 +52,14 @@
         const positiveNumbers = array.filter(num => num > 0);
         document.getElementById("positiveNumbers").innerText = "Positive Numbers: " + positiveNumbers.join(", ");
     }
+    //Sum of total Array Elements
+    function sumArrayElements() {
+        const input = document.getElementById("arrayInputSum").value;
+        const array = input.split(",").map(Number); 
+        const sum = array.reduce((acc, num) => acc + num, 0);
+        document.getElementById("sumResult").innerText = "Sum of Array Elements: " + sum;
+    }
+
 
 </script>    
 </body>
