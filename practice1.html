@@ -31,6 +31,14 @@
     <button onclick="displayFizzBuzz()">Get FizzBuzz</button>
     <p id="fizzBuzzResult"></p>
 </div>
+<!-- Find the Largest Number -->
+<div>
+    <h2>Find the Largest Number</h2>
+    <p>Enter a list of numbers separated by commas:</p>
+    <input type="text" id="arrayInput" placeholder="Enter numbers separated by commas">
+    <button onclick="displayLargestNumber()">Find Largest</button>
+    <p id="largestResult"></p>
+ </div>
 <!-- JavaScript Functions -->
 <script>
     // Even or Odd Checker 
@@ -76,6 +84,22 @@
         const fizzBuzzResult = FizzBuzz(Number(numberInput));
         document.getElementById('fizzBuzzResult').textContent = fizzBuzzResult;
     }
+    //Find the Largest Number
+    function findLargesNumber(array){
+        let largest = array[0];
+        for (let i = 1; i < array.length; i++) {
+            if (array[i] > largest) {
+                largest = array[i];
+            }
+        }
+        return largest;
+    }
+    function displayLargestNumber() {
+        const arrayInput = document.getElementById('arrayInput').value.split(',').map(Number);
+        const largestNumber = findLargesNumber(arrayInput);
+        document.getElementById('largestResult').textContent = "The largest number is: " + largestNumber;
+    }
+    
 </script>
 </body>
 </html>
