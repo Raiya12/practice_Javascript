@@ -35,6 +35,13 @@
         <button onclick="sumArrayElements()">Sum</button>
         <p id="sumResult"></p>
     </div>
+    <!--Count Word Occurrences-->
+    <div>
+        <h2>Count Word Occurrences</h2>
+        <p>Enter a sentence:</p>
+        <input type="text" id="wordInput" placeholder="e.g. hello world hello">
+        <button onclick="displayWordOccurrences()">Count</button>
+        <pre id="wordResult"></pre>
 
 <!--JS-->
 <script>
@@ -58,6 +65,20 @@
         const array = input.split(",").map(Number); 
         const sum = array.reduce((acc, num) => acc + num, 0);
         document.getElementById("sumResult").innerText = "Sum of Array Elements: " + sum;
+    }
+    //Count Word Occurrences
+    function countWordOccurrences(str) {
+        const words = str.split(/\s+/); // Split by whitespace
+        const wordCount = {};
+        words.forEach(word => {
+            wordCount[word] = (wordCount[word] || 0) + 1;
+        });
+        return wordCount;
+    }
+    function displayWordOccurrences() {
+        const input = document.getElementById("wordInput").value;
+        const occurrences = countWordOccurrences(input);
+        document.getElementById("wordResult").innerText = JSON.stringify(occurrences, null, 2);
     }
 
 
