@@ -23,7 +23,14 @@
         <p id="sumResult"></p>
     </div>
 </div>
-
+<!-- FizzBuzz -->
+<div>
+    <h2>FizzBuzz</h2>
+    <p>Enter a number to get the FizzBuzz sequence:</p>
+    <input type="number" name="fizzBuzzInput" placeholder="Enter a number">
+    <button onclick="displayFizzBuzz()">Get FizzBuzz</button>
+    <p id="fizzBuzzResult"></p>
+</div>
 <!-- JavaScript Functions -->
 <script>
     // Even or Odd Checker 
@@ -52,7 +59,23 @@
         const sum = calculateSum(Number(numberInput));
         document.getElementById('sumResult').textContent = "The sum of numbers from 1 to " + numberInput + " is " + sum + ".";
     }
-
+  // FizzBuzz
+  function FizzBuzz(n) {
+        if (n % 3 === 0 && n % 5 === 0) {
+            return "FizzBuzz";
+        } else if (n % 3 === 0) {
+            return "Fizz";
+        } else if (n % 5 === 0) {
+            return "Buzz";
+        } else {
+            return n;
+        }
+    }
+    function displayFizzBuzz() {
+        const numberInput = document.getElementsByName('fizzBuzzInput')[0].value;
+        const fizzBuzzResult = FizzBuzz(Number(numberInput));
+        document.getElementById('fizzBuzzResult').textContent = fizzBuzzResult;
+    }
 </script>
 </body>
 </html>
