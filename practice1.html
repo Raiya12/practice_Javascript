@@ -39,6 +39,14 @@
     <button onclick="displayLargestNumber()">Find Largest</button>
     <p id="largestResult"></p>
  </div>
+<!--Count Vowels in a String-->
+ <dev>
+    <h2>Count Vowels in a String</h2>
+    <p>Enter a string to count the number of vowels:</p>
+    <input type="text" id="stringInput" placeholder="Enter a string">
+    <button onclick="displayVowelCount()">Count Vowels</button>
+    <p id="vowelResult"></p>
+ </dev>
 <!-- JavaScript Functions -->
 <script>
     // Even or Odd Checker 
@@ -100,6 +108,22 @@
         document.getElementById('largestResult').textContent = "The largest number is: " + largestNumber;
     }
     
+    // Count Vowels in a String
+    function countVowels(string) {
+        const vowels = 'aeiouAEIOU';
+        let count = 0;
+        for (let char of string) {
+            if (vowels.includes(char)) {
+                count++;
+            }
+        }
+        return count;
+    }
+    function displayVowelCount() {
+        const stringInput = document.getElementById('stringInput').value;
+        const vowelCount = countVowels(stringInput);
+        document.getElementById('vowelResult').textContent = "The number of vowels in the string is: " + vowelCount;
+    }
 </script>
 </body>
 </html>
