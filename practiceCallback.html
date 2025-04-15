@@ -69,20 +69,37 @@
     
         //Task 2--------------------------------------------------------------------------------------------:
         function ADD(x, y, callback) {
+            setTimeout(() => {
             const result = x + y;
+            console.log(`Addition result: ${result}`);
             callback(result);
+            }, 1000); // Simulate 1-second delay
         }
         function SUB(x, y, callback) {
+            setTimeout(() => {
             const result = x - y;
+            console.log(`Subtraction result: ${result}`);
             callback(result);
+            }, 1000); // Simulate 1-second delay
         }
         function MUL(x, y, callback) {
+            setTimeout(() => {
             const result = x * y;
+            console.log(`Multiplication result: ${result}`);
             callback(result);
+            }, 1000); // Simulate 1-second delay
         }
         function DIV(x, y, callback) {
-            const result = x / y;
-            callback(result);
+            setTimeout(() => {
+            if (y === 0) {
+                console.log("Division by zero error");
+                callback("Error: Division by zero");
+            } else {
+                const result = x / y;
+                console.log(`Division result: ${result}`);
+                callback(result);
+            }
+            }, 1000); // Simulate 1-second delay
         }
         function calculate() {
             const input = document.getElementById('numInput').value;
@@ -92,16 +109,16 @@
 
             ADD(num1, num2, (addResult) => {
             SUB(num1, num2, (subResult) => {
-            MUL(num1, num2, (mulResult) => {
-            DIV(num1, num2, (divResult) => {
-                document.getElementById('result').innerHTML = `
-                Addition: ${addResult}<br>
-                Subtraction: ${subResult}<br>
-                Multiplication: ${mulResult}<br>
-                Division: ${divResult}
-                `;
-            });
-            });
+                MUL(num1, num2, (mulResult) => {
+                DIV(num1, num2, (divResult) => {
+                    document.getElementById('result').innerHTML = `
+                    Addition: ${addResult}<br>
+                    Subtraction: ${subResult}<br>
+                    Multiplication: ${mulResult}<br>
+                    Division: ${divResult}
+                    `;
+                });
+                });
             });
             });
         }
