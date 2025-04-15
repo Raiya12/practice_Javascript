@@ -32,7 +32,12 @@
         <button onclick="handleArrayProcessing2()">Uppercase Strings</button>
         <p id="arrayResult2"></p>
     </div>
-
+    <!-- Task4:Function getData(callback) that simulates an API call with a delay -->
+    <div>
+        <h2>API Simulation</h2>
+        <button onclick="getData((data) => { console.log(data); })">Get Data</button>
+        <p id="apiResult"></p>
+    </div>
     <script>
         //Task 1--------------------------------------------------------------------------------------------:
         function greet(name, callback) {
@@ -103,7 +108,17 @@
             const uppercased = processArray(strings, (s) => s.toUpperCase());
             document.getElementById('arrayResult2').textContent = `Uppercased: ${uppercased}`;
         }
-     
+        //Task 4--------------------------------------------------------------------------------------------:
+        function getData(callback) {
+            setTimeout(() => {
+                const mockData = { id: 123, name: "Raiya Ahmed" };
+                callback(mockData);
+            }, 2000); // 2-second delay
+        }
+        getData((data) => {
+            console.log("Received:", data);
+            document.getElementById('apiResult').textContent = `Received: ${JSON.stringify(data)}`;
+        });
     </script>
 </body>
 </html>
