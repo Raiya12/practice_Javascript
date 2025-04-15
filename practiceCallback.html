@@ -52,6 +52,13 @@
         });">Login</button>
         <p id="loginResult"></p>   
      </div>
+    <!-- Task 6: Callback with Success and Error Handling-->
+    <div>
+        <h2>Division with Callbacks</h2>
+        <button onclick="divide(10, 2, onSuccess, onError)">Divide 10 by 2</button>
+        <button onclick="divide(10, 0, onSuccess, onError)">Divide 10 by 0</button>
+        <p id="divisionResult"></p>
+    </div>
 
     <script>
         //Task 1--------------------------------------------------------------------------------------------:
@@ -145,14 +152,13 @@
             setTimeout(() => {
                 const mockData = { id: 123, name: "Raiya Ahmed" };
                 callback(mockData);
-            }, 2000); // 2-second delay
+            }, 5000); // 2-second delay
         }
         getData((data) => {
             console.log("Received:", data);
             document.getElementById('apiResult').textContent = `Received: ${JSON.stringify(data)}`;
         });
         //Task 5--------------------------------------------------------------------------------------------:
-        //Task 5: Nested Callbacks
         function login(username, password, callback) {
             setTimeout(() => {
                 console.log("Login successful for user:", username);
@@ -173,7 +179,25 @@
                 callback(fetchedsettings);
             }, 1000); // Simulate 1 second delay
         }
-
+        //Task 6--------------------------------------------------------------------------------------------:
+       function divide(a, b, successCallback, errorCallback) {
+            setTimeout(() => {
+                if (b === 0) {
+                    errorCallback("Error: Division by zero");
+                } else {
+                    const result = a / b;
+                    successCallback(result);
+                }
+            }, 2000); // Simulate 1-second delay
+        }
+        function onSuccess(result) {
+            console.log("Division result:", result);
+        }
+        function onError(error) {
+            console.error(error);
+        }
+        divide(10, 2, onSuccess, onError); // Should log: Division result: 5
+        divide(10, 0, onSuccess, onError); // Should log: Error: Division by zero
     </script>
 </body>
 </html>
