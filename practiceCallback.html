@@ -19,8 +19,22 @@
     <button onclick="calculate()">calculate</button>
     <p id="result"></p>
 </div>
+<!-- Task3:Function processArray(arr, callback) that takes an array and a callback function -->
+    <div>
+        <h2>Array Processing</h2>
+        <p>Enter numbers (comma-separated):</p>
+        <input type="text" id="arrayInput1" placeholder="e.g., 1,2,3">
+        <button onclick="handleArrayProcessing1()">Double Numbers</button>
+        <p id="arrayResult1"></p>
+        
+        <p>Enter strings (comma-separated):</p>
+        <input type="text" id="arrayInput2" placeholder="e.g., a,b,c">
+        <button onclick="handleArrayProcessing2()">Uppercase Strings</button>
+        <p id="arrayResult2"></p>
+    </div>
+
     <script>
-        //Task 1:
+        //Task 1--------------------------------------------------------------------------------------------:
         function greet(name, callback) {
             callback(name);
         }
@@ -33,7 +47,7 @@
             });
         }
     
-        //Task 2:
+        //Task 2--------------------------------------------------------------------------------------------:
         function ADD(x, y, callback) {
             const result = x + y;
             callback(result);
@@ -71,6 +85,25 @@
             });
             });
         }
+        //Task 3--------------------------------------------------------------------------------------------:
+        function processArray(arr, callback) {
+            return arr.map(callback);
+        }
+
+        function handleArrayProcessing1() {
+            const input = document.getElementById('arrayInput1').value;
+            const numbers = input.split(',').map(num => parseFloat(num.trim()));
+            const doubled = processArray(numbers, (n) => n * 2);
+            document.getElementById('arrayResult1').textContent = `Doubled: ${doubled}`;
+        }
+
+        function handleArrayProcessing2() {
+            const input = document.getElementById('arrayInput2').value;
+            const strings = input.split(',').map(str => str.trim());
+            const uppercased = processArray(strings, (s) => s.toUpperCase());
+            document.getElementById('arrayResult2').textContent = `Uppercased: ${uppercased}`;
+        }
+     
     </script>
 </body>
 </html>
