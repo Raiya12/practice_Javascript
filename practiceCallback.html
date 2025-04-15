@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- Function greet(name, callback) that takes a name and a callback function -->
+    <!-- Task1:Function greet(name, callback) that takes a name and a callback function -->
     <div>
         <h2>Custom Greeting</h2>
         <input type="text" id="nameInput" placeholder="Enter your name">
         <button onclick="handleGreet()">Greet</button>
         <p id="greetingResult"></p>
     </div>
+  <!-- Task2:Math opration callback-->
+  <div>
+    <h2>Calculater</h2>
+    <input type="text" id="numInput" placeholder="(x,y,opration + - * /)">
+    <button onclick="calculate()">calculate</button>
+    <p id="result"></p>
+</div>
     <script>
         //Task 1:
         function greet(name, callback) {
@@ -23,6 +30,45 @@
             greet(name, (name) => {
                 const message = `Hello, ${name}!`;
                 document.getElementById('greetingResult').textContent = message;
+            });
+        }
+    
+        //Task 2:
+        function ADD(x, y, callback) {
+            const result = x + y;
+            callback(result);
+        }
+        function SUB(x, y, callback) {
+            const result = x - y;
+            callback(result);
+        }
+        function MUL(x, y, callback) {
+            const result = x * y;
+            callback(result);
+        }
+        function DIV(x, y, callback) {
+            const result = x / y;
+            callback(result);
+        }
+        function calculate() {
+            const input = document.getElementById('numInput').value;
+            const [x, y] = input.split(',').map(item => item.trim());
+            const num1 = parseFloat(x);
+            const num2 = parseFloat(y);
+
+            ADD(num1, num2, (addResult) => {
+            SUB(num1, num2, (subResult) => {
+            MUL(num1, num2, (mulResult) => {
+            DIV(num1, num2, (divResult) => {
+                document.getElementById('result').innerHTML = `
+                Addition: ${addResult}<br>
+                Subtraction: ${subResult}<br>
+                Multiplication: ${mulResult}<br>
+                Division: ${divResult}
+                `;
+            });
+            });
+            });
             });
         }
     </script>
