@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Function greet(name, callback) that takes a name and a callback function -->
+    <div>
+        <h2>Custom Greeting</h2>
+        <input type="text" id="nameInput" placeholder="Enter your name">
+        <button onclick="handleGreet()">Greet</button>
+        <p id="greetingResult"></p>
+    </div>
+    <script>
+        //Task 1:
+        function greet(name, callback) {
+            callback(name);
+        }
+
+        function handleGreet() {
+            const name = document.getElementById('nameInput').value;
+            greet(name, (name) => {
+                const message = `Hello, ${name}!`;
+                document.getElementById('greetingResult').textContent = message;
+            });
+        }
+    </script>
+</body>
+</html>
