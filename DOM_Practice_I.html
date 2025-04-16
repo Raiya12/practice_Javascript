@@ -4,6 +4,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DOM Practice 1</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #colorDiv {
+            margin-top: 20px;
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+        }
+        #toggleParagraph {
+            margin-top: 20px;
+            display: block;
+        }
+        #myList {
+            margin-top: 20px;
+            list-style-type: none;
+            padding: 0;
+        }
+        #myList li {
+            margin: 5px 0;
+        }
+        #removeParagraph {
+            margin-top: 20px;
+            display: block;
+        }
+        #removeParagraph.hidden {
+            display: none;
+        }
+    </style>
 </head>
 <body>
     <!-- 1. Change Text Content:Change the text of a heading (<h1>) when a button is clicked. -->
