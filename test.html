@@ -4,21 +4,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Raiya</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #282c34;
+            color: white;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        #txt, #txt2 {
+            font-size: 2rem;
+            margin: 20px;
+        }
+        button {
+            background-color: #61dafb;
+            color: #282c34;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.5rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #21a1f1;
+        }
+    </style> 
 </head>
 <body>
-    <h1>click the button</h1>
-    <button onclick="sayHello()">Click Me!</button>
-<script>
-    let count = 0;
-    const sayHello = () => {
-        count++;
-        for (let i = 0; i < count; i++) {
-            console.log("Raiya" + (i+1));
-        } 
-    };
-</script>
-</body>
+    <!--<p id="txt">Greeting</p>-->
+    <button onclick="changeTxt()">Let's get started</button>
+    <br>
+    <button onclick="changeColor()">Change color</button>
+    <br>
+    <button onclick="changeFontSize()">Change font size</button>
+    <div id ="container"><p id="txt2">ready?</p></div>
+    <br>
+    <button onclick="updateParagraph()">Update paragraph</button>
+    <br>
+    <button onclick="deleteParagraph()">Delete paragraph</button>
     
-</script>
+    <script>
+        function changeTxt() {
+            console.log("Clicked!");
+            //document.getElementById("txt").innerText = "Hello, Raiya!";
+            let paragraph = document.getElementById("txt2").innerText;
+            if (paragraph === "ready?") {
+                document.getElementById("txt2").innerText = "Go!";
+            } else if (paragraph === "Go!") {
+                document.getElementById("txt2").innerText = "ready?";
+            }
+        }
+        function changeColor(){
+            document.getElementById("txt2").style.color = "red";
+        }
+        function changeFontSize() {
+            document.getElementById("txt2").style.fontSize = "50px";
+          
+        }
+        function updateParagraph() {
+            let newParagraph = document.createElement("p");
+            newParagraph.innerText = "This is a new paragraph!";
+            document.getElementById("container").appendChild(newParagraph);
+        }
+        function deleteParagraph() {
+            document.getElementById("container").remove();
+        }
+
+    </script>
 </body>
 </html>
