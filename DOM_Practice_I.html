@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice 1</title>
+</head>
+<body>
+    <!-- 1. Change Text Content:Change the text of a heading (<h1>) when a button is clicked. -->
+    <h1 id="heading">Original Heading</h1>
+    <button onclick="changeHeadingText()">Change Heading Text</button>
+    <br>
+    <!--2. Change Style:Change the background color of a <div> when a button is clicked.-->
+    <div id="colorDiv" style="width: 200px; height: 200px; background-color: lightblue;"></div>
+    <button onclick="changeColor()">Change Color</button>
+    <br>
+    <!--3. Show/Hide Element:Toggle visibility of a paragraph using a button.-->
+    <p id="toggleParagraph">This is a toggled paragraph.</p>
+    <button onclick="toggleParagraph()">Toggle Paragraph</button>
+    <br>
+    <!--4. Create and Append Element:Add a new list item to an unordered list when a button is clicked.-->
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+    <button onclick="addListItem()">Add Item</button>
+    <br>
+    <!--5. Remove Element:Remove a specific element from the DOM on button click.-->
+    <p id="removeParagraph">This paragraph will be removed.</p>
+    <button onclick="removeParagraph()">Remove Paragraph</button> 
+
+    <script>
+        function changeHeadingText() {
+            document.getElementById("heading").innerText = "New Heading Text";
+        }
+        function changeColor(){
+            document.getElementById('colorDiv').style.backgroundColor = 'lightgreen';
+        }
+        function toggleParagraph() {
+            let paragraph = document.getElementById('toggleParagraph');
+            if (paragraph.style.display === 'none') {
+            paragraph.style.display = 'block';
+            } else {
+            paragraph.style.display = 'none';
+            }
+        }
+        
+        function addListItem(){
+            let li = document.createElement('li');
+            li.innerText = 'New Item';
+            document.getElementById('myList').appendChild(li);
+        }
+        function removeParagraph(){
+            document.getElementById('removeParagraph').remove()
+        }
+    </script>
+
+</body>
+</html>
