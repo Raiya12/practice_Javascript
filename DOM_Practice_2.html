@@ -47,8 +47,24 @@
         <li onclick="highlightListItem(this)">Item 3</li>
     </ul>
     <br>
-    
-
+<!--11. Show/Hide Password:Use a checkbox to toggle visibility of a password input (type="password" → type="text").-->
+    <input type="password" id="password" placeholder="Password">
+    <button onclick="togglePasswordVisibility()">Show/Hide Password</button>
+    <br>
+<!--12. Pre-fill Input Field:Automatically set the value of a text box when the page loads.-->
+    <input type="text" id="myInput3" placeholder="Pre-filled text" onfocus="prefillInputField()">
+    <br>
+<!--13. Uppercase Converter:As a user types into a field, display the input converted to uppercase in a <p> below.-->
+    <input type="text" id="myInput4" placeholder="Type here" oninput="uppercaseConverter()">
+    <p id="output"></p>
+    <br>
+<!--14. Simple Color Picker:Use an <input type="color"> and change the background of a box to the selected color.-->
+    <input type="color" id="colorInput" onchange="colorPicker()">
+    <div id="colorBox" style="width: 100px; height: 100px;"></div>
+    <br>
+<!--15. Reset Page Content:Add a "Reset" button that clears or resets a section (e.g., form fields, divs) to their original content.-->
+    <button onclick="resetPageContent()">Reset</button>
+    <br>
 
 <script>
     function changePageTitle() {
@@ -98,6 +114,44 @@
         item.style.backgroundColor = "yellow";
         console.log("List item highlighted");
     }
+    function togglePasswordVisibility() {
+        let passwordField = document.getElementById("password");
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+        } else {
+            passwordField.type = "password";
+        }
+    }
+    function prefillInputField() {
+        let inputField = document.getElementById("myInput3");
+        inputField.value = "Pre-filled text";
+        console.log("Input field pre-filled with:", inputField.value);
+    }
+    function uppercaseConverter() {
+        let inputField = document.getElementById("myInput4");
+        let outputField = document.getElementById("output");
+        outputField.innerText = inputField.value.toUpperCase();
+    }
+    function colorPicker() {
+        let colorInput = document.getElementById("colorInput");
+        let colorBox = document.getElementById("colorBox");
+        colorBox.style.backgroundColor = colorInput.value;
+        console.log("Background color changed to:", colorInput.value);
+    }
+    function resetPageContent() {
+        document.getElementById("myInput").value = "";
+        document.getElementById("myInput2").value = "";
+        document.getElementById("myInput3").value = "";
+        document.getElementById("myInput4").value = "";
+        document.getElementById("output").innerText = "";
+        document.getElementById("colorBox").style.backgroundColor = "white";
+        document.getElementById("counter").innerText = "Counter: 0";
+        document.body.style.backgroundColor = "white";
+        let listItems = document.querySelectorAll("#myList li");
+        listItems.forEach(item => item.style.backgroundColor = "");
+        console.log("Page content reset");
+    }
+
 </script>
 </body>
 </html>
