@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Practice 2</title>
+
+</head>
+<body>
+<!-- 1. Change Page Title on Button Click:When you click a button, change the content of the <title> tag of the page. -->
+    <button onclick="changePageTitle()">Change Page Title</button>
+    <br>
+<!--2. Change Image Alt Text:Select an image and change its alt attribute to something new.-->
+    <img src="https://img00.deviantart.net/6ffc/i/2011/116/a/4/random_flower_by_marinkostrena-d3exi8e.jpg" alt="Placeholder Image" id="myImage">
+    <button onclick="changeImageAlt()">Change Image Alt Text</button>
+    <br>
+<!--3. Change Button Text When Clicked:Make a button change its own text from "Click Me" to "Clicked!" when pressed.-->
+    <button id="myButton" onclick="this.innerText = 'Clicked!'">Click Me</button>
+    <br>
+<!--4. Toggle Paragraph Font Size:On clicking a button, increase the font size of a paragraph. Click again to reduce it.-->
+    <p id="myParagraph" style="font-size: 16px;">This is a paragraph.</p>
+    <button onclick="toggleFontSize()">Toggle Font Size</button>
+    <br>
+<!--5. Update a Counter on Button Click:Create a counter that increases by 1 every time you click a button.-->
+    <p id="counter">Counter: 0</p>
+    <button onclick="incrementCounter()">Increment Counter</button>
+    <br>
+
+
+<script>
+    function changePageTitle() {
+        document.title = "DOM Manipulation";
+        console.log("Page title changed to:", document.title);
+    }
+    function changeImageAlt(){
+        let image = document.getElementById("myImage");
+        image.alt = "New Alt Text";
+        console.log("Image alt text changed to:", image.alt);
+    }
+    function toggleFontSize() {
+        let paragraph = document.getElementById("myParagraph");
+        if (paragraph.style.fontSize === "16px") {
+            paragraph.style.fontSize = "24px";
+        } else {
+            paragraph.style.fontSize = "16px";
+        }
+    }
+    function incrementCounter() {
+        let counter = document.getElementById('counter');
+        counter.innerText = `Counter: ${parseInt(counter.innerText.split(': ')[1]) + 1}`;
+    }
+
+</script>
+</body>
+</html>
