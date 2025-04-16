@@ -25,6 +25,29 @@
     <p id="counter">Counter: 0</p>
     <button onclick="incrementCounter()">Increment Counter</button>
     <br>
+<!--6. Disable a Button After Clicking:When you click a button, disable it (grayed out, cannot click again).-->
+    <button id="disableButton" onclick="disableButton(this)">Disable Me</button>
+    <br>
+<!--7. Input Field Focus & Blur Effects:Change the border color of an input field when it gains and loses focus..-->
+    <input type="text" id="myInput" placeholder="Focus on me!" onfocus="changeColor()" onblur="this.style.borderColor = 'pink'">
+    <br>
+<!--8. Alert Input Value:Add a text field and a button — when clicked, show an alert with whatever was typed in.-->
+    <input type="text" id="myInput2" placeholder="Type something here">
+    <button onclick="showAlert()">Show Input Value</button>
+    <br>
+<!--9. Change Background Color of the Page:Use buttons to switch the background color of the whole page (e.g., red, green, blue).-->
+    <button onclick="changeBackgroundColor('red')">Red</button>
+    <button onclick="changeBackgroundColor('green')">Green</button>
+    <button onclick="changeBackgroundColor('blue')">Blue</button>
+    <br>
+<!--10. Highlight List Items:When you click on a list item (<li>), it gets a different background color.-->
+    <ul id="myList">
+        <li onclick="highlightListItem(this)">Item 1</li>
+        <li onclick="highlightListItem(this)">Item 2</li>
+        <li onclick="highlightListItem(this)">Item 3</li>
+    </ul>
+    <br>
+    
 
 
 <script>
@@ -49,7 +72,32 @@
         let counter = document.getElementById('counter');
         counter.innerText = `Counter: ${parseInt(counter.innerText.split(': ')[1]) + 1}`;
     }
-
+    function disableButton(button) {
+        button.disabled = true;
+        button.style.backgroundColor = "gray";
+        button.style.color = "white";
+        button.style.cursor = "not-allowed";
+        button.innerText = 'Disabled';
+        console.log("Button disabled");
+    }
+    function changeColor() {
+        let inputField = document.getElementById("myInput");
+        inputField.style.borderColor = "blue";
+        console.log("Input field focused");
+    }
+    function showAlert() {
+        let inputField = document.getElementById("myInput2");
+        alert("Input Value: " + inputField.value);
+        console.log("Alert shown with input value:", inputField.value);
+    }
+    function changeBackgroundColor(color) {
+        document.body.style.backgroundColor = color;
+        console.log("Background color changed to:", color);
+    }
+    function highlightListItem(item) {
+        item.style.backgroundColor = "yellow";
+        console.log("List item highlighted");
+    }
 </script>
 </body>
 </html>
