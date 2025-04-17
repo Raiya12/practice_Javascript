@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practice Promises</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-color: #f9f9f9;
+        }
+    
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    
+        #reset {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: #FF5733;
+            color: white;
+        }
+    
+        #loadUsers {
+            background-color: #007BFF;
+            color: white;
+        }
+    
+        #loadPosts {
+            background-color: #28A745;
+            color: white;
+        }
+    
+        #loadComments {
+            background-color: #FFC107;
+            color: white;
+        }
+    
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+    
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+    
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+            max-width: 600px;
+        }
+    
+        ul li {
+            background-color: white;
+            margin-bottom: 10px;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    
+        #postResponse {
+            color: green;
+            text-align: center;
+        }
+    
+        #postId {
+            padding: 10px;
+            width: 100%;
+            max-width: 200px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!--at the top right side ad a reset button -->
+    <button id="reset" onclick="reset()">Reset</button>
+    <h1>Fetch() and DOM Practice</h1>
+
+    <!-- 1. Show Users: Display their name, email, and company name in a list on the page -->
+    <h1>Users</h1>
+    <button id="loadUsers">Load Users</button>
+    <ul id="userList">
+    </ul>
+
+    <!-- 2. Show Posts Add a button: “Load Posts” When clicked, Show the title and body for each post -->
+    <h1>Posts</h1>
+    <button id="loadPosts">Load Posts</button>
+    <ul id="postList">
+    </ul>
+
+    <!-- 3. Add a Post Add a simple form with:Title(input),Body (text area),Submit button,On submit, send a POST request to Show a success message and the new post’s returned data (ID, title, body) -->
+    <h1>Add a Post</h1>
+    <form id="postForm">
+        <label for="postTitle" >Title:</label>
+        <input type="text" id="postTitle" placeholder="Enter post title">
+
+        <label for="postBody">Body:</label>
+        <textarea id="postBody" placeholder="Enter post body"></textarea>
+
+        <button type="submit">Add Post</button>
+    </form>
+    <div id="postResponse"></div>
+<!-- 4. Show Comments for a Post :Add an input field: Post ID,Add a button: “Load Comments”,When clicked, fetch comments for that post.Display the name and comment body for each comment -->
+    <h1>Comments for a Post</h1>
+    <input type="number" id="postId" placeholder="Enter Post ID">
+    <button id="loadComments">Load Comments</button>
+    <ul id="commentList"></ul>
+
+
+<script
+src="fetch&dom.js">  
+
+                       
+</script>
+
+</body>
+</html>
